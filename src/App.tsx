@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import ResumeGenerator from './pages/ResumeGenerator';
@@ -10,11 +11,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   
   return (
-    <MainLayout setCurrentPage={setCurrentPage}>
-      {currentPage === 'home' && <HomePage setCurrentPage={setCurrentPage} />}
-      {currentPage === 'resume' && <ResumeGenerator />}
-      {currentPage === 'coverLetter' && <CoverLetterGenerator />}
-    </MainLayout>
+    <ThemeProvider>
+      <MainLayout setCurrentPage={setCurrentPage}>
+        {currentPage === 'home' && <HomePage setCurrentPage={setCurrentPage} />}
+        {currentPage === 'resume' && <ResumeGenerator />}
+        {currentPage === 'coverLetter' && <CoverLetterGenerator />}
+      </MainLayout>
+    </ThemeProvider>
   );
 }
 

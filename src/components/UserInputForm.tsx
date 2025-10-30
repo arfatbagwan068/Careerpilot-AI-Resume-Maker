@@ -175,8 +175,8 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
   
   return (
     <>
-    <div className="max-w-l mx-auto my-4 p-4 bg-yellow-50 border border-yellow-300 rounded-2xl shadow-sm text-yellow-800 text-sm text-center">
-      <strong className="block mb-1 text-yellow-900">⚠️ Important Notice</strong>
+    <div className="max-w-l mx-auto my-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-600 rounded-2xl shadow-sm text-yellow-800 dark:text-yellow-200 text-sm text-center">
+      <strong className="block mb-1 text-yellow-900 dark:text-yellow-100">⚠️ Important Notice</strong>
       <p>
         If you leave this page, any unsaved information will be lost.
         To avoid losing your data, please copy and save it in a notepad before proceeding.
@@ -185,91 +185,91 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
 
     <form onSubmit={handleSubmit} className="space-y-8">
       {/* Personal Information Section */}
-      <section className="bg-slate-800/30 rounded-xl p-6 backdrop-blur-sm">
+      <section className="bg-surface/30 backdrop-blur-sm border border-border rounded-xl p-6 shadow-lg">
         <div 
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleSection('personalInfo')}
         >
-          <h2 className="text-xl font-semibold">Personal Information</h2>
-          <span>{visibleSections.personalInfo ? '−' : '+'}</span>
+          <h2 className="text-xl font-semibold text-foreground">Personal Information</h2>
+          <span className="text-foreground">{visibleSections.personalInfo ? '−' : '+'}</span>
         </div>
         
         {visibleSections.personalInfo && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 Full Name
               </label>
               <input
                 type="text"
                 value={personalInfo.fullName}
                 onChange={(e) => setPersonalInfo({...personalInfo, fullName: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="John Doe"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 Email
               </label>
               <input
                 type="email"
                 value={personalInfo.email}
                 onChange={(e) => setPersonalInfo({...personalInfo, email: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="john.doe@example.com"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 Phone
               </label>
               <input
                 type="tel"
                 value={personalInfo.phone}
                 onChange={(e) => setPersonalInfo({...personalInfo, phone: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="(123) 456-7890"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 Location
               </label>
               <input
                 type="text"
                 value={personalInfo.location}
                 onChange={(e) => setPersonalInfo({...personalInfo, location: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="City, State"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 LinkedIn (optional)
               </label>
               <input
                 type="url"
                 value={personalInfo.linkedIn || ''}
                 onChange={(e) => setPersonalInfo({...personalInfo, linkedIn: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="https://linkedin.com/in/johndoe"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1">
+              <label className="block text-sm font-medium text-foreground/80 mb-1">
                 Website (optional)
               </label>
               <input
                 type="url"
                 value={personalInfo.website || ''}
                 onChange={(e) => setPersonalInfo({...personalInfo, website: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                 placeholder="https://johndoe.com"
               />
             </div>
@@ -281,13 +281,13 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
       {type === 'resume' && (
         <>
           {/* Professional Summary Section */}
-          <section className="bg-slate-800/30 rounded-xl p-6 backdrop-blur-sm">
+          <section className="bg-surface/30 backdrop-blur-sm border border-border rounded-xl p-6 shadow-lg">
             <div 
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggleSection('summary')}
             >
-              <h2 className="text-xl font-semibold">Professional Summary</h2>
-              <span>{visibleSections.summary ? '−' : '+'}</span>
+              <h2 className="text-xl font-semibold text-foreground">Professional Summary</h2>
+              <span className="text-foreground">{visibleSections.summary ? '−' : '+'}</span>
             </div>
             
             {visibleSections.summary && (
@@ -295,10 +295,10 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
                 <textarea
                   value={summary}
                   onChange={(e) => setSummary(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[120px]"
+                  className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all min-h-[120px]"
                   placeholder="A brief summary of your professional background and key qualifications..."
                 />
-                <p className="text-xs text-slate-400 mt-2">
+                <p className="text-xs text-foreground/60 mt-2">
                   Pro tip: Keep your summary concise (3-5 sentences) and highlight your most relevant qualifications.
                 </p>
               </div>
@@ -306,26 +306,26 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
           </section>
           
           {/* Work Experience Section */}
-          <section className="bg-slate-800/30 rounded-xl p-6 backdrop-blur-sm">
+          <section className="bg-surface/30 backdrop-blur-sm border border-border rounded-xl p-6 shadow-lg">
             <div 
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggleSection('workExperience')}
             >
-              <h2 className="text-xl font-semibold">Work Experience</h2>
-              <span>{visibleSections.workExperience ? '−' : '+'}</span>
+              <h2 className="text-xl font-semibold text-foreground">Work Experience</h2>
+              <span className="text-foreground">{visibleSections.workExperience ? '−' : '+'}</span>
             </div>
             
             {visibleSections.workExperience && (
               <div className="mt-4 space-y-6">
                 {workExperience.map((exp, index) => (
-                  <div key={index} className="p-4 border border-slate-700 rounded-lg">
+                  <div key={index} className="p-4 border border-border rounded-lg bg-surface/20">
                     <div className="flex justify-between mb-2">
-                      <h3 className="font-medium">Experience {index + 1}</h3>
+                      <h3 className="font-medium text-foreground">Experience {index + 1}</h3>
                       {workExperience.length > 1 && (
                         <button
                           type="button"
                           onClick={() => removeArrayItem('workExperience', index)}
-                          className="text-red-500 hover:text-red-400"
+                          className="text-red-500 hover:text-red-400 transition-colors"
                         >
                           <MinusIcon className="h-5 w-5" />
                         </button>
@@ -334,7 +334,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-1">
+                        <label className="block text-sm font-medium text-foreground/80 mb-1">
                           Company
                         </label>
                         <input
@@ -345,7 +345,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
                             newExp[index].company = e.target.value;
                             setWorkExperience(newExp);
                           }}
-                          className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-4 py-2 rounded-lg bg-surface/50 border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-all"
                           placeholder="Company Name"
                         />
                       </div>

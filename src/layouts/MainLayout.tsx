@@ -9,7 +9,7 @@ type MainLayoutProps = {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children, setCurrentPage }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
       <Header setCurrentPage={setCurrentPage} />
       <main className="flex-grow container mx-auto px-4 py-8">
         {children}
