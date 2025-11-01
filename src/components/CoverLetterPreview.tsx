@@ -11,7 +11,7 @@ type CoverLetterPreviewProps = {
 
 const CoverLetterPreview: React.FC<CoverLetterPreviewProps> = ({
   coverLetter,
-  templateId
+  // templateId // Future feature: different cover letter templates
 }) => {
   const { personalInfo, jobDetails, keyPoints } = coverLetter;
   

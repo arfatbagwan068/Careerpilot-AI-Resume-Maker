@@ -1,8 +1,16 @@
 {
-  "name": "careerpilot-ai",
+  "name": "careerpilot-ai-resume",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "AI-powered resume and cover letter generator with ATS scoring",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wajiddaudtamboli/CareerPilot-AI-Module-3.git"
+  },
+  "homepage": "https://github.com/wajiddaudtamboli/CareerPilot-AI-Module-3",
+  "author": "wajiddaudtamboli",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

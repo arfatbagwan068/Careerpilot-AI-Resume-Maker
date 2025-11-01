@@ -15,7 +15,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
 }) => {
   // Resume state
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo>(
-    (initialData as any)?.personalInfo || {
+    (initialData as Partial<Resume>)?.personalInfo || {
       fullName: '',
       email: '',
       phone: '',
@@ -61,7 +61,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
   
   // Cover Letter state
   const [jobDetails, setJobDetails] = useState<JobDetails>(
-    (initialData as any)?.jobDetails || {
+    (initialData as { jobDetails?: JobDetails })?.jobDetails || {
       company: '',
       position: '',
       hiringManager: '',
@@ -71,7 +71,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
   );
   
   const [keyPoints, setKeyPoints] = useState<string[]>(
-    (initialData as any)?.keyPoints || ['']
+    (initialData as { keyPoints?: string[] })?.keyPoints || ['']
   );
   
   // Form section visibility state
@@ -632,7 +632,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
                         value={skill.level || 'Intermediate'}
                         onChange={(e) => {
                           const newSkills = [...skills];
-                          newSkills[index].level = e.target.value as any;
+                          newSkills[index].level = e.target.value as 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
                           setSkills(newSkills);
                         }}
                         className="w-full px-4 py-2 rounded-lg bg-slate-700/50 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"

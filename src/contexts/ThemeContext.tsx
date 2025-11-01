@@ -12,9 +12,11 @@ const ThemeContext = createContext<ThemeContextType>({
   setTheme: () => {},
 });
 
-export const useTheme = () => useContext(ThemeContext);
+// Custom hook for using theme context
+const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+// Theme provider component
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Initialize theme from localStorage or system preference
@@ -114,3 +116,5 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
+
+export { useTheme, ThemeProvider };

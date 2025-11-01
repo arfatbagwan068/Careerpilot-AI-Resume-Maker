@@ -34,7 +34,7 @@ export const generateATSScore = (resume: Partial<Resume>, jobDescription?: strin
     const { fullName, email, phone, location } = resume.personalInfo;
     if (fullName) formatScore += 7.5;
     if (email?.includes('@')) formatScore += 7.5;
-    if (phone?.match(/^[\d\s\-\(\)]+$/)) formatScore += 7.5;
+    if (phone?.match(/^[\d\s\-()]+$/)) formatScore += 7.5;
     if (location) formatScore += 7.5;
   }
 

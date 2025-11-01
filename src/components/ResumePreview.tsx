@@ -18,7 +18,7 @@ type ResumePreviewProps = {
 const ResumePreview: React.FC<ResumePreviewProps> = ({
   resume,
   atsScore,
-  templateId
+  // templateId // Future feature: different resume templates
 }) => {
   const { personalInfo, summary, workExperience, education, skills } = resume;
   
