@@ -2,10 +2,6 @@
 
 🚀 An AI-powered web application that helps users generate professional resumes and cover letters, check their ATS (Applicant Tracking System) score, and download documents in PDF format — all in a clean, responsive design.
 
-## 🌐 Live Demo
-
-👉 [https://careerpilot-ai.vercel.app/](https://careerpilot-ai.vercel.app/)
-
 ## 🔥 Features
 
 - ✍️ **AI-Powered Resume & CV Generator**
